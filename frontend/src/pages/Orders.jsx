@@ -115,7 +115,7 @@ const Orders = () => {
             </div>
 
             <div className="order-items">
-              {order.items?.slice(0, 3).map((item, idx) => (
+              {order.items?.map((item, idx) => (
                 <div key={idx} className="order-item">
                   {item.product_image ? (
                     <img src={item.product_image} alt={item.product_name} className="order-item-image" />
@@ -129,11 +129,6 @@ const Orders = () => {
                   <div className="order-item-subtotal">¥{(item.price * item.quantity).toFixed(2)}</div>
                 </div>
               ))}
-              {order.items?.length > 3 && (
-                <div style={{ textAlign: 'center', padding: '10px', color: '#999', fontSize: '13px' }}>
-                  还有 {order.items.length - 3} 件商品...
-                </div>
-              )}
             </div>
 
             <div className="order-delivery-info">
